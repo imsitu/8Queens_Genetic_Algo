@@ -1,5 +1,5 @@
 import random
-
+maxFitness = 28
 
 class NQueen:
     def generate_population(self): #making random chromosomes
@@ -51,8 +51,9 @@ class NQueen:
         return x[0:c] + y[c:n]
 
     def mutate(self,x):
-        c = random.randint(0, self.no_of_queens - 1)
-        m = random.randint(1, self.no_of_queens)
+        n = len(x)
+        c = random.randint(0, n - 1)
+        m = random.randint(1, n)
         x[c] = m
         return x
 
@@ -95,7 +96,8 @@ if __name__ == "__main__":
     no_of_queens = 8
     #int(input("Enter Number of Queens: "))
     maxFitness = int((no_of_queens * (no_of_queens - 1)) / 2)
-    nq.find(no_of_queens)
+    seq =nq.find(no_of_queens)
+    print(nq.fitness(seq))
 
 
 
