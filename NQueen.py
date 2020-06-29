@@ -98,3 +98,4 @@ if __name__ == "__main__":
     nq.find(no_of_queens)
 
 
+
